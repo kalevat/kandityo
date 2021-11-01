@@ -9,6 +9,98 @@ Tutkielmassa verrattiin konesalipalvelun aikaisia tikettejä sekä pilvipalveist
 
 Tiketit on luokiteltu viisiportaisella asteikolla eri tärkeysasteille. Samaa luokittelua on käytetty konesalipalveluissa ja pilvipalveluissa, joten tilastot ovat vertailukelpoisia.  Luokittelu perustuu virhetilanteen kriittisyyteen ja virhetilanteen vaikutukseen tuotantoon. P1 tason tiketin aukaistaan tilanteessa, jossa ohjelmalla on kriittinen yrityksen tuotannolle ja kyseisellä virhetilanteella on iso laaja-alainen vaikutus. Osa virhetilanteista on automaattitikettejä, jotka valvontalaitteisto aukaisee automaattisesti. Muut tiketit ovat käsin aukaistuja tikettejä niin, että loppukäyttäjä raportoi ongelmasta IT toimittajan asiakaspalveluun. 
 
+Pilvipalveluissa tarkasteltava aikajakso on 1.1.--30.9.2021. Tänä aikana virhetilanneisiin liittyviä käsin avattuja kriittisiä tikettejä on ollut yhteensä 22 ja vähemmän kriittisiä tikettejä 194. Kuvassa \ref{fig:pilvitiketit} nähdään tikettien määrät vuoden 2021 eri kuukausina sekä jakautuma kriittisten ja vähemmän kriittisten tikettien välillä. Kuvasta voidaan todeta, että kriittisiä virhetilanteita on ollut vähäinen määrä kuukausittain. Pääasiassa virhetilanteet ovat olleet vähemmän kriittisiä. Kuvasta nähdään, että kriittisiä virhetilanteiden määrässä ei ole ollut kuukausittain isoa vaihtelua. Taulukosta \ref{table:automaatti} nähdään kuinka paljon eri tärkeysasteen tikettejä on ollut vuoden 2021 aikana ja miten tiketit on jakautuneet käsin tehtyjen ja automaattitikettien välikkä. Taulukosta voidaan todeta, että kriittisiä automaattitikettejä on ollut vähän verrattuna kokonaismäärään. Taulukosta nähdään, että käsin on avattu pääasiassa P3 tason tikettejä, jotka ovat vähemmän kriittisiä.
+
+\begin{filecontents}{data1.dat}
+X Time  	Part1  Part2
+1 tammi  	2	22
+2 helmi		1	25
+3 maalis	2	18
+4 huhti		3	41
+5 touko		2	28
+6 kesä		2	13
+7 heinä		2	14
+8 elo       3   15
+9 syys      5   18
+\end{filecontents}
+
+\begin{figure}[ht]
+\begin{tikzpicture}
+\begin{axis}[
+axis lines=middle,
+ymin=0,
+legend pos=outer north east,nodes near coords,
+x label style={at={(current axis.right of origin)},anchor=north, below=10mm},
+title={\textbf{\textit{}}},
+    xlabel=Vuosi 2021,
+    ylabel=Määrä,
+    xticklabel style = {rotate=30,anchor=east},
+    enlargelimits = false,
+    xticklabels from table={data1.dat}{Time},xtick=data]
+\addplot[blue,thick,mark=square*] table [y=Part1,x=X]{data1.dat};
+\addlegendentry{P1+P2 tiketit}
+\addplot[red,thick,mark=square*] table [y= Part2,x=X]{data1.dat};
+\addlegendentry{Muut tiketit}
+\end{axis}
+\end{tikzpicture}
+\caption{Vertailu käsin avattujen kriittisten ja vähemmän kriittisten tikettien välillä pilvipalveluissa}
+\label{fig:pilvitiketit}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{||c c c||} 
+ \hline
+ Kriittisyys & Käsin avatut tiketit & Automaattitiketit \\ [0.5ex] 
+ \hline\hline
+ P1 & 5 & 14 \\ 
+ P2 & 19 & 0 \\
+ P3 & 173 & 17 \\
+ P4 & 9 & 1 \\
+ P5 & 9 & 348 \\
+ \textbf{Yhteensä} & \textbf{215} & \textbf{380}\\ [1ex] 
+ \hline
+\end{tabular}
+\caption{Pilvipalveluissa avattut tiketit vuonna 2021}
+\label{table:automaatti}
+\end{table}
+
+Pilvipalveluissa oli aikajaksolla 1.1.--30.9.2021 yhteensä 224 palvelupyyntöä. Palvelupyyntöjen ratkaisuaika oli keskimäärin 244 tuntia eli reilu 10 päivää. Maksimiarvo ratkaisuajalla oli 2213 tuntia eli yli 92 päivää. Kuvassa \ref{fig:pilvipyynto} nähdään palvelupyyntötikettien määrät vuoden 2021 eri kuukausina. Kuvasta voidaan todeta, että palvelupyyntöjen määrä on ollut nousussa. Nousu johtuu siitä, että pilvipalvelujen käyttöönotto on edelleen kesken ja muutoksia ympäristöön tehdään jatkuvasti Lisäksi Finnairin ydinliiketoiminta on elpymässä ja liiketoiminnan kehitys on alettu tekemään korona-ajan jälkeen.
+
+\begin{filecontents}{data2.dat}
+X Time  	Part1
+1 tammi  	8
+2 helmi		21
+3 maalis	21
+4 huhti		16
+5 touko		38
+6 kesä		34
+7 heinä		23
+8 elo       31
+9 syys      32
+\end{filecontents}
+
+\begin{figure}[ht]
+\begin{tikzpicture}
+\begin{axis}[
+axis lines=middle,
+ymin=0,
+legend pos=south east,nodes near coords,
+x label style={at={(current axis.right of origin)},anchor=north, below=10mm},
+title={\textbf{\textit{}}},
+    xlabel=Vuosi 2021,
+    ylabel=Määrä,
+    xticklabel style = {rotate=30,anchor=east},
+    enlargelimits = false,
+    xticklabels from table={data2.dat}{Time},xtick=data]
+\addplot[blue,thick,mark=square*] table [y=Part1,x=X]{data2.dat};
+\addlegendentry{Palvelupyynnöt}
+\end{axis}
+\end{tikzpicture}
+\caption{Tilasto palvelupyynnöistä pilvipalveluissa}
+\label{fig:pilvipyynto}
+\end{figure}
+
 \section{Haastattelut}
 Haastatteluissa selvitettiin minkälainen subjektiivinen käsitys Finnair IT asiantuntijalla ja johtajalla on tuotannon laadusta, kun verrataan pilvipalvelua ja konesalipalvelua. Haastatteluun osallistuneilla henkilöillä on kokemusta molemmista toimintamalleista. Haastatteluissa haettiin heidän henkilökohtaisia mielipiteitä aiheesta ja mielipiteiden ei tarvinnut perustua todellisiin faktatietoihin. Faktatietoihin perustuva vertailua tehtiin tämän tutkimuksen muissa osissa. Subjektiivinen näkökulma on tärkeä selvittää, koska laatu perustuu myös tuntemukseen siitä kuinka hyvin asiakasta palvellaan sekä minkälainen olo hänelle on toiminnasta. Haastattelu jakautui kahteen osaan. Ensimmäisessä osassa selvitettiin tuotannon laatua virhetilanteiden (\emph{incident}) kautta ja toisessa osassa palvelupyyntöjen (\emph{service request}) kautta.
 
