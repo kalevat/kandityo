@@ -9,19 +9,19 @@ Tutkielmassa verrattiin konesalipalvelun aikaisia tikettejä sekä pilvipalveist
 
 Tiketit on luokiteltu viisiportaisella asteikolla eri tärkeysasteille. Samaa luokittelua on käytetty konesalipalveluissa ja pilvipalveluissa, joten tilastot ovat vertailukelpoisia.  Luokittelu perustuu virhetilanteen kriittisyyteen ja virhetilanteen vaikutukseen tuotantoon. P1 tason tiketin aukaistaan tilanteessa, jossa ohjelmalla on kriittinen yrityksen tuotannolle ja kyseisellä virhetilanteella on iso laaja-alainen vaikutus. Osa virhetilanteista on automaattitikettejä, jotka valvontalaitteisto aukaisee automaattisesti. Muut tiketit ovat käsin aukaistuja tikettejä niin, että loppukäyttäjä raportoi ongelmasta IT toimittajan asiakaspalveluun. 
 
-Pilvipalveluissa tarkasteltava aikajakso on 1.1.--30.9.2021. Tänä aikana virhetilanneisiin liittyviä käsin avattuja kriittisiä tikettejä on ollut yhteensä 22 ja vähemmän kriittisiä tikettejä 194. Kuvassa \ref{fig:pilvitiketit} nähdään tikettien määrät vuoden 2021 eri kuukausina sekä jakautuma kriittisten ja vähemmän kriittisten tikettien välillä. Kuvasta voidaan todeta, että kriittisiä virhetilanteita on ollut vähäinen määrä kuukausittain. Pääasiassa virhetilanteet ovat olleet vähemmän kriittisiä. Kuvasta nähdään, että kriittisiä virhetilanteiden määrässä ei ole ollut kuukausittain isoa vaihtelua. Taulukosta \ref{table:automaatti} nähdään kuinka paljon eri tärkeysasteen tikettejä on ollut vuoden 2021 aikana ja miten tiketit on jakautuneet käsin tehtyjen ja automaattitikettien välikkä. Taulukosta voidaan todeta, että kriittisiä automaattitikettejä on ollut vähän verrattuna kokonaismäärään. Taulukosta nähdään, että käsin on avattu pääasiassa P3 tason tikettejä, jotka ovat vähemmän kriittisiä.
+Pilvipalveluissa tarkasteltava aikajakso on 1.1.--30.9.2021. Tänä aikana virhetilanneisiin liittyviä käsin avattuja kriittisiä tikettejä on ollut yhteensä 22 ja vähemmän kriittisiä tikettejä 194. Kuvassa \ref{fig:pilvitiketit} nähdään tikettien määrät vuoden 2021 eri kuukausina sekä jakautuma kriittisten ja vähemmän kriittisten tikettien välillä. Kuvasta voidaan todeta, että kriittisiä virhetilanteita on ollut vähäinen määrä kuukausittain. Pääasiassa virhetilanteet ovat olleet vähemmän kriittisiä. Kuvasta nähdään, että kriittisiä virhetilanteiden määrässä ei ole ollut kuukausittain isoa vaihtelua. Taulukosta \ref{table:pilviautomaatti} nähdään kuinka paljon eri tärkeysasteen tikettejä on ollut pilvipalveluissa vuoden 2021 aikana ja miten tiketit on jakautuneet käsin tehtyjen ja automaattitikettien välillä. Taulukosta voidaan todeta, että kriittisiä automaattitikettejä on ollut vähän verrattuna kokonaismäärään. Taulukosta nähdään, että käsin on avattu pääasiassa P3 tason tikettejä, jotka ovat vähemmän kriittisiä.
 
 \begin{filecontents}{data1.dat}
 X Time  	Part1  Part2
-1 tammi  	2	22
-2 helmi		1	25
-3 maalis	2	18
-4 huhti		3	41
-5 touko		2	28
-6 kesä		2	13
-7 heinä		2	14
-8 elo       3   15
-9 syys      5   18
+1 tammi  	2	    22
+2 helmi		1	    25
+3 maalis	2	    18
+4 huhti		3	    41
+5 touko		2	    28
+6 kesä		2	    13
+7 heinä		2	    14
+8 elo       3       15
+9 syys      5       18
 \end{filecontents}
 
 \begin{figure}[ht]
@@ -61,11 +61,11 @@ title={\textbf{\textit{}}},
  \textbf{Yhteensä} & \textbf{215} & \textbf{380}\\ [1ex] 
  \hline
 \end{tabular}
-\caption{Pilvipalveluissa avattut tiketit vuonna 2021}
-\label{table:automaatti}
+\caption{Pilvipalveluissa avatut tiketit 1.1.-30.9.2021}
+\label{table:pilviautomaatti}
 \end{table}
 
-Pilvipalveluissa oli aikajaksolla 1.1.--30.9.2021 yhteensä 224 palvelupyyntöä. Palvelupyyntöjen ratkaisuaika oli keskimäärin 244 tuntia eli reilu 10 päivää. Maksimiarvo ratkaisuajalla oli 2213 tuntia eli yli 92 päivää. Kuvassa \ref{fig:pilvipyynto} nähdään palvelupyyntötikettien määrät vuoden 2021 eri kuukausina. Kuvasta voidaan todeta, että palvelupyyntöjen määrä on ollut nousussa. Nousu johtuu siitä, että pilvipalvelujen käyttöönotto on edelleen kesken ja muutoksia ympäristöön tehdään jatkuvasti Lisäksi Finnairin ydinliiketoiminta on elpymässä ja liiketoiminnan kehitys on alettu tekemään korona-ajan jälkeen.
+Pilvipalveluissa oli aikajaksolla 1.1.--30.9.2021 yhteensä 224 palvelupyyntöä. Palvelupyyntöjen ratkaisuaika oli keskimäärin 244 tuntia eli reilu 10 päivää. Maksimiarvo ratkaisuajalla oli 2213 tuntia eli yli 92 päivää. Kuvassa \ref{fig:pilvipyynto} nähdään palvelupyyntötikettien määrät vuoden 2021 eri kuukausina. Kuvasta voidaan todeta, että palvelupyyntöjen määrä on ollut nousussa. Nousu johtuu siitä, että pilvipalvelujen käyttöönotto on edelleen kesken ja muutoksia ympäristöön tehdään jatkuvasti Lisäksi Finnairin ydinliiketoiminta on elpymässä ja liiketoiminnan kehitystä on alettu tekemään korona-ajan jälkeen.
 
 \begin{filecontents}{data2.dat}
 X Time  	Part1
@@ -99,6 +99,107 @@ title={\textbf{\textit{}}},
 \end{tikzpicture}
 \caption{Tilasto palvelupyynnöistä pilvipalveluissa}
 \label{fig:pilvipyynto}
+\end{figure}
+
+Konesalipalveluissa tarkasteltava aikajakso on 1.11.2019--30.11.2020. Aikajakso on valittu sen mukaan, että siltä ajalta oli parhaiten vertailukelpoista tietoa saatavissa tutkimukseen. Lisäksi konesalipalvelut olivat tuolla ajanjaksolla vakiintuneet ja tuotanto oli stabiilia. Ajanjaksona virhetilanneisiin liittyviä käsin avattuja kriittisiä tikettejä oli yhteensä 117 ja vähemmän kriittisiä tikettejä 156. Kuvassa \ref{fig:konesalitiketit} nähdään tikettien määrät vuoden 2021 eri kuukausina sekä jakautuma kriittisten ja vähemmän kriittisten tikettien välillä. Kuvasta voidaan todeta, että kriittisiä virhetilanteita on ollut vuoden 2019 lopussa enemmän kuin vuoden 2020 lopussa. Kuvasta voidaan huomata, että tikettien kokonaismäärä on laskenut vuoden 2020 aikana. Vuoden 2020 lopussa kriittisten tikettien määrä oli vähäinen.  Taulukosta \ref{table:koneautomaatti} nähdään kuinka paljon eri tärkeysasteen tikettejä on ollut konesalipalveluissa aikajaksolla 1.1.--30.9.2020 aikana. Taulukosta nähdään, että käsin on avattu eniten P3 tason tikettejä, jotka ovat vähemmän kriittisiä. Taulukon mukaan P1 ja P2 tikettejä 48 \% tikettien kokonaismäärästä. Taulukon lähdetiedoista puuttuu P5 tason tiketit.
+
+\begin{filecontents}{data3.dat}
+X Time  	Part1  Part2
+1 marras  	22	    30
+2 joulu		8	    20
+3 tammi 	7	    15
+4 helmi		19	    24
+5 maalis	23	    16
+6 huhti		6	    6
+7 touko		4	    5
+8 kesä      6       6
+9 heinä     7       8
+10 elo      3       8
+11 syys     3       4
+12 loka     7       11
+13 marras   2       3
+\end{filecontents}
+
+\begin{figure}[ht]
+\begin{tikzpicture}
+\begin{axis}[
+axis lines=middle,
+ymin=0,
+legend pos=north east,nodes near coords,
+x label style={at={(current axis.right of origin)},anchor=north, below=10mm},
+title={\textbf{\textit{}}},
+    xlabel=Vuosi 2019-2020,
+    ylabel=Määrä,
+    xticklabel style = {rotate=30,anchor=east},
+    enlargelimits = false,
+    xticklabels from table={data3.dat}{Time},xtick=data]
+\addplot[blue,thick,mark=square*] table [y=Part1,x=X]{data3.dat};
+\addlegendentry{P1+P2 tiketit}
+\addplot[red,thick,mark=square*] table [y= Part2,x=X]{data3.dat};
+\addlegendentry{Muut tiketit}
+\end{axis}
+\end{tikzpicture}
+\caption{Vertailu käsin avattujen kriittisten ja vähemmän kriittisten tikettien välillä konesalipalveluissa}
+\label{fig:konesalitiketit}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{||c c||} 
+ \hline
+ Kriittisyys & Käsin avatut tiketit \\ [0.5ex] 
+ \hline\hline
+ P1 & 37 \\ 
+ P2 & 48 \\
+ P3 & 85 \\
+ P4 & 14 \\
+ P5 &  \\
+ \textbf{Yhteensä} & \textbf{184} \\ [1ex] 
+ \hline
+\end{tabular}
+\caption{Konesalipalveluissa käsin avatut tiketit vuonna 1.1.--30.9.2020}
+\label{table:koneautomaatti}
+\end{table}
+
+Konesalipalveluissa oli aikajaksolla 1.11.2019--30.11.2020 yhteensä 3374 palvelupyyntöä. Palvelupyyntöjen ratkaisuaika oli keskimäärin 244 tuntia eli reilu 10 päivää. Maksimiarvo ratkaisuajalla oli 2213 tuntia eli yli 92 päivää. Kuvassa \ref{fig:konepyynto} nähdään palvelupyyntötikettien määrät eri kuukausina. Kuvasta voidaan todeta, että palvelupyyntöjen määrä on laskenut. Tämä selittyy sillä, että vuoden 2020 lopussa konesaliympäristöstä oltiin siirtämässä pilvipalveluihin eikä ympäristöä enää kehitetty.
+
+\begin{filecontents}{data4.dat}
+X Time  	Part1
+1 marras  	497
+2 joulu		388
+3 tammi 	460
+4 helmi		490
+5 maalis	346
+6 huhti		178
+7 touko		52
+8 kesä      114
+9 heinä     156
+10 elo      142
+11 syys     214
+12 loka     246
+13 marras   91
+\end{filecontents}
+
+\begin{figure}[ht]
+\begin{tikzpicture}
+\begin{axis}[
+axis lines=middle,
+ymin=0,
+legend pos=north east,nodes near coords,
+x label style={at={(current axis.right of origin)},anchor=north, below=10mm},
+y label style={at={(axis description cs:-0.2,.5)},rotate=90,anchor=south},
+title={\textbf{\textit{}}},
+    xlabel=Vuosi 2019-2020,
+    ylabel=Määrä,
+    xticklabel style = {rotate=30,anchor=east},
+    enlargelimits = false,
+    xticklabels from table={data4.dat}{Time},xtick=data]
+\addplot[blue,thick,mark=square*] table [y=Part1,x=X]{data4.dat};
+\addlegendentry{Palvelupyynnöt}
+\end{axis}
+\end{tikzpicture}
+\caption{Tilasto palvelupyynnöistä konsesalipalveluissa}
+\label{fig:konepyynto}
 \end{figure}
 
 \section{Haastattelut}
